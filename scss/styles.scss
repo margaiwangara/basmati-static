@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Merriweather:400,700");
 
+$primary: #000000;
+$secondary: #0c1821;
+$tertiary: #ccc9dc;
+$links: #324a5f;
 $raleway-font: "Merriweather", serif;
 $pacifico-font: "Pacifico", cursive;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
