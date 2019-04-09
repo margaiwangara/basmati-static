@@ -49,7 +49,8 @@ header {
     left: 0;
     right: 0;
     content: "";
-    background: url("../img/bg-cons1e.jpg") no-repeat center/cover;
+    background: url("https://images.pexels.com/photos/949211/pexels-photo-949211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+      no-repeat 100% 100% / cover;
     z-index: 1;
     height: 100%;
     width: 100%;
@@ -149,7 +150,7 @@ header {
 
       .left {
         flex: 1;
-        background: url("https://images.pexels.com/photos/110081/pexels-photo-110081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+        background: url("https://images.pexels.com/photos/265216/pexels-photo-265216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
           no-repeat center/cover;
         position: relative;
       }
@@ -160,13 +161,11 @@ header {
         bottom: 0;
         left: 0;
         right: 0;
-
-        background: rgba(194, 215, 208, 0.45);
+        content: "";
         height: 100%;
         width: 100%;
-        border-radius: 0.35rem;
+        background: rgba(194, 215, 208, 0.35);
       }
-
       .right {
         flex: 1;
 
@@ -213,6 +212,8 @@ header {
       .right {
         flex: 1;
         position: relative;
+        background: url("https://images.pexels.com/photos/789555/pexels-photo-789555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+          no-repeat center/cover;
       }
 
       .right:after {
@@ -224,7 +225,7 @@ header {
         background: rgba(194, 215, 208, 0.35);
         height: 100%;
         width: 100%;
-        border-radius: 0.35rem;
+        content: "";
       }
 
       .left {
@@ -316,10 +317,31 @@ footer {
       font-size: 1.2rem;
       border-radius: 50%;
       margin: 0 0.25rem;
-      background: rgba(194, 215, 208, 0.9);
-      color: $secondary;
+      // background: rgba(194, 215, 208, 0.9);
+      background: $quaternary;
+      color: #c3cd97;
       &.fa-facebook-f {
         padding: 0.85rem 1.1rem;
+      }
+    }
+  }
+
+  .right {
+    .bottom--nav {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+      grid-column-gap: 0.5rem;
+
+      .nav__link {
+        text-transform: uppercase;
+        color: $secondary;
+        letter-spacing: 0.075rem;
+        text-align: center;
+        display: block;
+        padding: 0.5rem;
+        font-weight: 500;
+        font-size: 0.9rem;
       }
     }
   }
@@ -400,4 +422,15 @@ footer {
   cursor: pointer;
   letter-spacing: 0.035rem;
   font-weight: 400;
+}
+
+// hover states
+.nav__link:hover {
+  color: $quaternary;
+  border-bottom: solid 1px $quaternary;
+}
+
+.btn:hover {
+  color: $white;
+  background: $secondary;
 }
