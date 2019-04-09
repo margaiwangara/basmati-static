@@ -321,18 +321,19 @@ footer {
       font-size: 1.2rem;
       border-radius: 50%;
       margin: 0 0.25rem;
-      // background: rgba(194, 215, 208, 0.9);
-      background: $quaternary;
-      color: #c3cd97;
-      border: solid 1px $quaternary;
+      background: rgba(194, 215, 208, 0.5);
+      // color: #c3cd97;
+      color: $quaternary;
+      border: solid 1px rgba(194, 215, 208, 0.5);
       &.fa-facebook-f {
         padding: 0.85rem 1.1rem;
       }
 
       &:hover {
         background: transparent;
-        border: solid 1px $quaternary;
         color: $quaternary;
+        transform: scale(1.25);
+        transition: all 0.2s ease-in-out;
       }
     }
   }

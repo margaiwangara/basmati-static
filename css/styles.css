@@ -235,15 +235,16 @@ footer {
     font-size: 1.2rem;
     border-radius: 50%;
     margin: 0 0.25rem;
-    background: #354d40;
-    color: #c3cd97;
-    border: solid 1px #354d40; }
+    background: rgba(194, 215, 208, 0.5);
+    color: #354d40;
+    border: solid 1px rgba(194, 215, 208, 0.5); }
     footer .left .cfa-social.fa-facebook-f {
       padding: 0.85rem 1.1rem; }
     footer .left .cfa-social:hover {
       background: transparent;
-      border: solid 1px #354d40;
-      color: #354d40; }
+      color: #354d40;
+      transform: scale(1.25);
+      transition: all 0.2s ease-in-out; }
   footer .right .bottom--nav {
     list-style-type: none;
     display: grid;
