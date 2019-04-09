@@ -4,6 +4,7 @@ This is a sample project containing source code for a rice company created with 
 The project contains three branches each with a different styling.
 
 ##Partitions
+THis project contains three branches
 
 ###Branch - Third-Concept
 
