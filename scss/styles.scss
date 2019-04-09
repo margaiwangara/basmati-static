@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Merriweather:400,700");
 
-$primary: rgb(33, 48, 88);
-$secondary: rgb(244, 174, 63);
-$background: #f0e6d7;
-$links: rgba(244, 174, 63, 0.3);
-$primary-opacity: rgba(33, 48, 88, 0.35);
+// Colors
+$primary: #c2d7d0;
+$secondary: #1b1813;
+$tertiary: #7a958e;
+$white: #fff;
+$black: #000;
+
+// Fonts
 $merriweather-font: "Merriweather", serif;
 $pacifico-font: "Pacifico", cursive;
 
@@ -17,255 +20,77 @@ body {
   min-height: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  background: $background;
   font-family: $merriweather-font;
 }
 
 a {
   text-decoration: none;
 }
-#wrapper {
-  min-height: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
 
 header {
   min-height: 600px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  background: url("https://images.unsplash.com/photo-1465765407776-61e63b99d10c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-    no-repeat center/cover;
-  position: relative;
+  background: $white;
+  box-sizing: border-box;
+  padding: 1rem 0;
+  .container--wd {
+    background: $primary;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.35rem;
+  }
+
   .navbar {
     width: 100%;
-    background: $primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    box-sizing: border-box;
+    .navbar--brand {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.075rem;
+      color: $secondary;
+      border: solid 2px $secondary;
+      padding: 0.5rem;
 
-    z-index: 50;
+      .brand__top {
+        height: 100%;
+        border-right: solid 2px $secondary;
+        padding: 0 0.3rem;
+      }
+    }
+    .navbar--nav {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+      grid-column-gap: 0.5rem;
 
-    position: fixed;
-    border-bottom: solid 2px $secondary;
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 1rem;
-      width: 80%;
-      height: 100%;
-      margin: 0 auto;
-      box-sizing: border-box;
-      .navbar--brand {
-        font-family: $pacifico-font;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+      .nav__link {
+        text-transform: uppercase;
         color: $secondary;
-        line-height: 0.8;
-        letter-spacing: 0.025rem;
-        text-transform: capitalize;
-        padding: 0.8rem 0.5rem;
-      }
-      ul.navbar--nav {
-        list-style-type: none;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(40px, 1fr));
-        grid-column-gap: 0.25rem;
-
-        &.navbar--social {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(10px, 1fr));
-          grid-column-gap: 0.05rem;
-
-          .social-fa {
-            border: solid 1px;
-            border-radius: 50%;
-            padding: 0.8rem;
-
-            &.fa-facebook-f {
-              padding: 0.8rem 1rem;
-            }
-          }
-        }
-
-        .nav__link {
-          padding: 0.5rem;
-          height: 100%;
-          display: block;
-          text-align: center;
-          text-transform: uppercase;
-          letter-spacing: 0.025rem;
-          color: $secondary;
-          font-size: 0.9rem;
-
-          &.active {
-            border-bottom: solid 1px $links;
-            color: $links;
-          }
-        }
-      }
-    }
-  }
-
-  #welcome {
-    width: 100%;
-    height: 500px;
-    z-index: 5;
-    .welcome--inner {
-      width: 70%;
-      height: 500px;
-      display: flex;
-      margin: 0 auto;
-      padding: 70px 1rem;
-      align-items: center;
-      .welcome__left {
-        flex: 1;
-        box-sizing: border-box;
-        .display--3 {
-          display: flex;
-          flex-direction: column;
-          font-family: $pacifico-font;
-          text-transform: capitalize;
-          font-size: 6rem;
-          line-height: 0.9;
-          text-align: center;
-          height: 100%;
-          padding: 2rem 0;
-          letter-spacing: 0.025rem;
-          color: $secondary;
-        }
-      }
-
-      .welcome__right {
-        flex: 1;
-      }
-    }
-  }
-}
-
-header:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  // content: "";
-  background: rgba(33, 48, 88, 0.35);
-}
-
-#rice {
-  min-height: 500px;
-  width: 100%;
-
-  .rice--inner {
-    min-height: 500px;
-    width: 100%;
-    display: flex;
-    box-sizing: border-box;
-    .rice__left {
-      flex: 1;
-      .container {
-        width: 90%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: $primary;
-        flex-direction: column;
+        letter-spacing: 0.075rem;
         text-align: center;
-        box-sizing: border-box;
-        padding: 0 1.5rem;
-        margin: 0 auto;
-        height: 100%;
-        .display--4 {
-          font-size: 2rem;
-          line-height: 1.5;
-          letter-spacing: 0.03rem;
-          font-family: $pacifico-font;
-          text-transform: uppercase;
-          border-bottom: solid 3px $primary;
-          padding: 1rem 0;
-          margin: 1.5rem 0;
-        }
-
-        .rice__description {
-          font-size: 0.85rem;
-          letter-spacing: 0.035rem;
-          line-height: 1.75;
-        }
-      }
-    }
-
-    .rice__right {
-      flex: 1;
-      background: url("https://images.unsplash.com/photo-1504358958476-e5881667ddf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-        no-repeat center/cover;
-      position: relative;
-      &:after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        content: "";
-        background: $primary-opacity;
+        display: block;
+        padding: 0.5rem;
+        font-weight: 500;
+        font-size: 0.9rem;
       }
     }
   }
 }
 
-#about {
-  min-height: 500px;
-  width: 100%;
+// Utility Classes
+.container--wd {
+  width: 98%;
+  height: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 1rem;
+}
 
-  .about--inner {
-    min-height: 500px;
-    width: 100%;
-    display: flex;
-    box-sizing: border-box;
-    .about__left {
-      flex: 1;
-      background: url("https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80")
-        no-repeat center/cover;
-      filter: grayscale(100%);
-    }
-
-    .about__right {
-      flex: 1;
-
-      .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: $primary;
-        flex-direction: column;
-        text-align: center;
-        padding: 0 1.5rem;
-        box-sizing: border-box;
-        width: 90%;
-        margin: 0 auto;
-        height: 100%;
-        .display--4 {
-          font-size: 2rem;
-          line-height: 1.5;
-          letter-spacing: 0.03rem;
-          font-family: $pacifico-font;
-          text-transform: uppercase;
-          border-bottom: solid 3px $primary;
-          padding: 1rem 0;
-          margin: 1.5rem 0;
-        }
-
-        .about__description {
-          font-size: 0.85rem;
-          letter-spacing: 0.035rem;
-          line-height: 1.75;
-        }
-      }
-    }
-  }
+.btn--navbar {
+  border: solid 2px $secondary;
 }
