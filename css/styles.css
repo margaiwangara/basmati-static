@@ -70,17 +70,18 @@ header {
     header .navbar .navbar--nav {
       list-style-type: none;
       display: grid;
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
-      grid-column-gap: 0.5rem; }
+      grid-template-columns: repeat(4, minmax(50px, 1fr)); }
       header .navbar .navbar--nav .nav__link {
         text-transform: uppercase;
         color: #1b1813;
         letter-spacing: 0.075rem;
         text-align: center;
-        display: block;
         padding: 0.5rem;
         font-weight: 500;
         font-size: 0.9rem; }
+        header .navbar .navbar--nav .nav__link:hover, header .navbar .navbar--nav .nav__link.active {
+          color: #354d40;
+          border-bottom: solid 1.5px; }
   header #welcome {
     min-height: 500px;
     width: 100%;
@@ -235,13 +236,18 @@ footer {
     border-radius: 50%;
     margin: 0 0.25rem;
     background: #354d40;
-    color: #c3cd97; }
+    color: #c3cd97;
+    border: solid 1px #354d40; }
     footer .left .cfa-social.fa-facebook-f {
       padding: 0.85rem 1.1rem; }
+    footer .left .cfa-social:hover {
+      background: transparent;
+      border: solid 1px #354d40;
+      color: #354d40; }
   footer .right .bottom--nav {
     list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-column-gap: 0.5rem; }
     footer .right .bottom--nav .nav__link {
       text-transform: uppercase;
@@ -252,6 +258,9 @@ footer {
       padding: 0.5rem;
       font-weight: 500;
       font-size: 0.9rem; }
+      footer .right .bottom--nav .nav__link:hover {
+        color: #354d40;
+        border-bottom: solid 1px; }
 
 .container--wd {
   width: 98%;
@@ -320,8 +329,7 @@ footer {
   font-weight: 400; }
 
 .nav__link:hover {
-  color: #354d40;
-  border-bottom: solid 1px #354d40; }
+  color: #354d40; }
 
 .btn:hover {
   color: #fff;

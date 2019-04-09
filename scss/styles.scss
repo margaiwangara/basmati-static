@@ -94,18 +94,22 @@ header {
     .navbar--nav {
       list-style-type: none;
       display: grid;
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
-      grid-column-gap: 0.5rem;
+      grid-template-columns: repeat(4, minmax(50px, 1fr));
 
       .nav__link {
         text-transform: uppercase;
         color: $secondary;
         letter-spacing: 0.075rem;
         text-align: center;
-        display: block;
         padding: 0.5rem;
         font-weight: 500;
         font-size: 0.9rem;
+
+        &:hover,
+        &.active {
+          color: $quaternary;
+          border-bottom: solid 1.5px;
+        }
       }
     }
   }
@@ -320,8 +324,15 @@ footer {
       // background: rgba(194, 215, 208, 0.9);
       background: $quaternary;
       color: #c3cd97;
+      border: solid 1px $quaternary;
       &.fa-facebook-f {
         padding: 0.85rem 1.1rem;
+      }
+
+      &:hover {
+        background: transparent;
+        border: solid 1px $quaternary;
+        color: $quaternary;
       }
     }
   }
@@ -330,7 +341,7 @@ footer {
     .bottom--nav {
       list-style-type: none;
       display: grid;
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
       grid-column-gap: 0.5rem;
 
       .nav__link {
@@ -342,6 +353,11 @@ footer {
         padding: 0.5rem;
         font-weight: 500;
         font-size: 0.9rem;
+
+        &:hover {
+          color: $quaternary;
+          border-bottom: solid 1px;
+        }
       }
     }
   }
@@ -427,7 +443,6 @@ footer {
 // hover states
 .nav__link:hover {
   color: $quaternary;
-  border-bottom: solid 1px $quaternary;
 }
 
 .btn:hover {
